@@ -1,0 +1,6 @@
+@SkyTracker.API_HostAddress = http://localhost:5136
+
+GET {{SkyTracker.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -14,7 +14,7 @@ namespace SkyTracker.API.Services
             _logger = logger;
         }
 
-        public async Task<List<Flight>> GetFlightsInBoundsAsync(
+        public async Task<List<Flight>> GetFlightsAsync(
             double latMin, double latMax,
             double lonMin, double lonMax
         )
