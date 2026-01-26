@@ -50,5 +50,13 @@ namespace SkyTracker.API.Controllers
                 timestamp = DateTime.UtcNow
             });
         }
+
+        [HttpPost("fetch-now")]
+        public async Task<ActionResult<List<Flight>>> FetchFlightsNow()
+        {
+            var flights = await _openSkyService.GetFlightsAsync(52.5, 54, -10.5, -7.5);
+            var limitedFlights = flights.Take(20).ToList();
+            return Ok(new {count = limitedFlights.Count, message = "Fetched flights from OpenSky API"});
+        }
     }
 }

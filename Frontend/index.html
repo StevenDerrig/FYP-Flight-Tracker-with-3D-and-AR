@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyTracker - Flight Monitor</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SkyTracker - Flight Monitor</h1>
+        
+        <div class="content">
+            <div class="map-section">
+                <div id="map"></div>
+            </div>
+            
+            <div class="table-section">
+                <h2>Active Flights</h2>
+                <table id="flightsTable">
+                    <thead>
+                        <tr>
+                            <th>Flight Number</th>
+                            <th>Departure</th>
+                            <th>Destination</th>
+                            <th>Aircraft Type</th>
+                            <th>Status</th>
+                            <th>Altitude (ft)</th>
+                            <th>Speed (knots)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="flightsBody">
+                        <tr><td colspan="7" class="loading">Loading flights...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

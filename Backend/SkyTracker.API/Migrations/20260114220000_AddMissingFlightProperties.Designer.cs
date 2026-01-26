@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SkyTracker.API.Data;
@@ -11,9 +12,11 @@ using SkyTracker.API.Data;
 namespace SkyTracker.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260114220000_AddMissingFlightProperties")]
+    partial class AddMissingFlightProperties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -115,9 +118,11 @@ namespace SkyTracker.API.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("AircraftType")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Airline")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<double>("Altitude")
