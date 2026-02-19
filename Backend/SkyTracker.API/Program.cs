@@ -19,17 +19,18 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-// Database
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    options.UseNpgsql(connectionString);
-});
+// Database (disabled for now - streaming live data only)
+// var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+// builder.Services.AddDbContext<AppDbContext>(options =>
+// {
+//     options.UseNpgsql(connectionString);
+// });
 
 // Services
-builder.Services.AddScoped<IOpenSkyService, OpenSkyService>();
-builder.Services.AddScoped<IFlightService, FlightService>();
+builder.Services.AddScoped<IOpenSkyService, FlightRadar24Service>();
+// builder.Services.AddScoped<IFlightService, FlightService>(); // Disabled - database disabled
 builder.Services.AddHttpClient();
+builder.Services.AddHostedService<FlightBroadcastService>();
 
 // SignalR & CORS
 builder.Services.AddSignalR();
@@ -51,7 +52,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// Disable HTTPS redirect in development to allow HTTP connections from Android phone
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 app.UseRouting();
 app.UseCors("AllowAll");
 
