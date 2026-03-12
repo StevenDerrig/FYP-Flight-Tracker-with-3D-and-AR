@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="32dp"
+    android:background="#1A1A2E">
+
+    <!-- App Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sky Tracker"
+        android:textSize="36sp"
+        android:textColor="#00D4FF"
+        android:textStyle="bold"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Real-Time Flight Tracking &amp; AR"
+        android:textSize="16sp"
+        android:textColor="#AAAAAA"
+        android:layout_marginBottom="64dp" />
+
+    <!-- AR Camera Button -->
+    <Button
+        android:id="@+id/btn_ar_camera"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="AR Camera"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#0066CC"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Flight Tracker Button -->
+    <Button
+        android:id="@+id/btn_flight_tracker"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Flight Tracker"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#0066CC"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Settings Button -->
+    <Button
+        android:id="@+id/btn_settings"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Settings"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#333355"
+        android:layout_marginBottom="16dp" />
+
+</LinearLayout>
