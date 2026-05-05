@@ -46,6 +46,10 @@
         <activity
             android:name=".FlightListActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

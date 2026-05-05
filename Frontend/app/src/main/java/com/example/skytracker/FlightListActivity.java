@@ -57,7 +57,7 @@ public class FlightListActivity extends AppCompatActivity {
     }
 
     private void connectToSignalR() {
-        signalRClient.connect("http://192.168.1.113:5136", flights -> {
+        signalRClient.connect("http://10.64.108.241:5136", flights -> {
             runOnUiThread(() -> updateMapWithFlights(flights));
         });
     }

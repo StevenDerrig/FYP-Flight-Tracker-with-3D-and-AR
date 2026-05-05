@@ -3,7 +3,6 @@ package com.example.skytracker;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,13 +29,9 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // Settings button - placeholder for now
         btnSettings.setOnClickListener(v -> {
-            Toast.makeText(this, "Settings coming soon!", Toast.LENGTH_SHORT).show();
-
-            // TODO: Uncomment this when you create SettingsActivity
-            // Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
-            // startActivity(intent);
+            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+            startActivity(intent);
         });
     }
 }
